@@ -4,14 +4,14 @@
 	"description": "TypeScript Implementation of the Lox language interpreter",
 	"main": "./lib/index.js",
   "bin": {
-    "jslox": "bin/ucv"
+    "jslox": "bin/jslox"
   },
 	"scripts": {
 		"start": "pnpm run build && pnpm run global",
 		"build": "pnpm run clean:some && tsc -p .",
 		"global": "pnpm i -g && jslox",
-		"clean:some": "rmdir -rf ./lib ./docs",
-		"clean:all": "rmdir -rf ./node_modules ./package-lock.json ./lib ./docs",
+		"clean:some": "rm -rf ./lib ./docs",
+		"clean:all": "rm -rf ./node_modules ./package-lock.json ./lib ./docs",
 		"refresh": "pnpm run clean:all && pnpm install",
 		"docs": "typedoc --out docs ./src"
 	},
