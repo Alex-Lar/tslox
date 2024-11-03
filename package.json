@@ -7,9 +7,7 @@
     "jslox": "bin/jslox"
   },
 	"scripts": {
-		"start": "pnpm run build && pnpm run global",
 		"build": "pnpm run clean:some && tsc -p .",
-		"global": "pnpm i -g && jslox",
 		"clean:some": "rm -rf ./lib ./docs",
 		"clean:all": "rm -rf ./node_modules ./package-lock.json ./lib ./docs",
 		"refresh": "pnpm run clean:all && pnpm install",
