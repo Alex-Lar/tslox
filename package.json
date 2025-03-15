@@ -1,26 +1,26 @@
 {
-	"name": "jslox",
+	"name": "tslox",
 	"version": "0.0.1",
-	"description": "TypeScript Implementation of the Lox language interpreter",
-	"main": "./lib/index.js",
-  "bin": {
-    "jslox": "bin/jslox"
-  },
-	"scripts": {
-		"build": "pnpm run clean:some && tsc -p .",
-		"clean:some": "rm -rf ./lib ./docs",
-		"clean:all": "rm -rf ./node_modules ./package-lock.json ./lib ./docs",
-		"refresh": "pnpm run clean:all && pnpm install",
-		"docs": "typedoc --out docs ./src"
+	"description": "Lox language interpreter implemented in TypeScript",
+	"main": "./dist/index.js",
+	"bin": {
+		"tslox": "bin/tslox"
 	},
-	"keywords": [],
+	"scripts": {
+		"preinstall": "npx only-allow pnpm",
+		"build": "pnpm run clean:some && tsc -p .",
+		"clean:some": "rm -rf ./dist",
+		"clean:all": "rm -rf ./node_modules ./pnpm-lock.yaml ./dist",
+		"refresh": "pnpm run clean:all && pnpm install"
+	},
+	"keywords": ["lox", "interpreter", "language"],
 	"author": "Alexander Larin",
 	"license": "ISC",
 	"devDependencies": {
 		"@types/node": "^22.8.7",
+		"rimraf": "^6.0.1",
 		"ts-node": "^10.9.2",
 		"tslib": "^2.8.1",
-		"typedoc": "^0.26.11",
 		"typescript": "^5.6.3"
 	}
 }
