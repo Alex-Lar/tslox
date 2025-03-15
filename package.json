@@ -9,8 +9,8 @@
 	"scripts": {
 		"preinstall": "npx only-allow pnpm",
 		"build": "pnpm run clean:some && tsc -p .",
-		"clean:some": "rm -rf ./dist",
-		"clean:all": "rm -rf ./node_modules ./pnpm-lock.yaml ./dist",
+		"clean:some": "rimraf ./dist",
+		"clean:all": "rimraf ./node_modules ./pnpm-lock.yaml ./dist",
 		"refresh": "pnpm run clean:all && pnpm install"
 	},
 	"keywords": ["lox", "interpreter", "language"],
